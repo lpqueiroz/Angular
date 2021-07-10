@@ -1,0 +1,66 @@
+<!-- <p>{{ successAlert() }} </p>
+
+<div>
+    <button class="btn btn-primary" [disabled]="!canShowButton">Show me</button>
+</div>
+
+<div>
+    <button class="btn btn-primary" [disabled]="!canShowButton" (click)="onClickButton()">Event Binding
+    </button>
+</div>
+
+<div>
+    <label>Nome</label>
+    <input type="text" class="form-control" (input)="onEditText($event)">
+</div>
+
+<div>
+    <label>Nome 2</label>
+    <input type="text" class="form-control" [(ngModel)]="randomText">
+    <p>{{ randomText }}</p>
+</div>
+
+<div>
+    1. Adicione um campo input que atualiza uma propriedade ('username')
+    via Two-Way-Binding
+    2. Mostre a propriedade username via Interpolação de string
+    (em um parágrafo abaixo do input)
+    3. Adicione um botão que só deve ser clicado se o username não for
+    uma string vazia
+    4. Ao clicar no botão, o username deve ser resetado para uma string
+    vazia
+
+</div>
+
+<div>
+    <label>Username</label>
+    <input type="text" class="form-control" [(ngModel)]="username">
+    <p>{{ username }}</p>
+    <button class="btn btn-primary" [disabled]="username === ''" (click)="username = ''">
+        Username
+    </button>
+</div> -->
+
+<div>
+    <h1 *ngIf="canShowSuccessMessage; else showErrorMessage"> Formulário Preenchido com Sucesso! </h1>
+</div>
+
+<ng-template #showErrorMessage>
+    <h1>Formulário preenchido com erros!</h1>
+</ng-template>
+
+<div>
+    <h1 [ngStyle]="{backgroundColor: 'red'}">
+        Isso é vermelho!
+    </h1>
+</div>
+
+<!-- <div>
+    <h1 [ngClass]="{bg-green: canShowSuccessMessage === true}">
+        Isso é verde!
+    </h1>
+</div> -->
+
+<div *ngFor="let item of items">
+    <h1>{{item}}</h1>
+</div>
