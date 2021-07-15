@@ -1,0 +1,30 @@
+<div>
+    <button class="btn btn-info" (click)="openModalAgendamentoForm(agendamentoModalCreateTemplate)">
+        Agendar {{ nomeServico }}
+    </button>
+</div>
+
+<ng-template #agendamentoModalCreateTemplate>
+    <form [formGroup]="agendamentoForm">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Novo Agendamento</h4>
+        </div>
+
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nomeServico">Serviço</label>
+                            <input type="text" formControlName="nomeServico" class="form-control" style="width: 100%;"
+                                [(ngModel)]="nomeServico" readonly>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+        </div>
+    </form>
+</ng-template>
