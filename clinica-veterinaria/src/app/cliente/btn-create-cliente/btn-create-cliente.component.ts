@@ -32,6 +32,7 @@ export class BtnCreateClienteComponent implements OnInit {
       class: 'modal-sl modal-dialog-centered',
       ignoreBackdropClick: true
     })
+    this.clienteForm.reset();
   }
 
   closeModalClienteForm(): void {

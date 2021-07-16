@@ -1,1 +1,25 @@
-<button class="btn btn-info mr-2">Deletar</button>
+<button class="btn btn-info mr-2" (click)="openClienteFormModal(clienteModalDeleteTemplate)">
+    Deletar
+</button>
+
+<ng-template #clienteModalDeleteTemplate>
+    <form [formGroup]="clienteForm" (ngSubmit)="deleteCliente()">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Deletar Cliente</h4>
+        </div>
+
+        <div class="modal-body">
+            <div class="container">
+                <h5 class="text-center text-danger">Tem certeza que deseja excluir o cliente"{{ cliente.nome }}" ?</h5>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="container text-center">
+                <button class="btn btn-info" type="submit">Sim
+                </button>
+                <button type="button" class="btn btn-default ml-2" (click)="closeModalClienteForm();">Cancelar</button>
+            </div>
+        </div>
+    </form>
+</ng-template>

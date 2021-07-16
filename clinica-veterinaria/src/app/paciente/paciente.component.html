@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="text-center mt-5">
+        <h2>Listagem de Pacientes</h2>
+        <button class="btn btn-info float-right">Cadastrar paciente</button>
+    </div>
+
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">NOME</th>
+                <th scope="col">ESPÉCIE</th>
+                <th scope="col">CLIENTE RESPONSÁVEL</th>
+                <th scope="col">ADMINISTRAR PACIENTES</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let paciente of pacientes">
+            <tr>
+                <th scope="row">{{paciente.nome}}</th>
+                <td>{{paciente.especie}}</td>
+                <td>{{paciente.clienteResponsavelId}}</td>
+                <td>
+                    <button class="btn btn-info mr-2">
+                        Editar
+                    </button>
+                    <button class="btn btn-info mr-2">
+                        Deletar
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,1 +1,42 @@
-<button class="btn btn-info">Editar</button>
+<button class="btn btn-info mr-2" (click)="openClienteFormModal(clienteModalEditTemplate)">Editar</button>
+
+<ng-template #clienteModalEditTemplate>
+    <form [formGroup]="clienteForm" (ngSubmit)="editCliente()">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Editar Cliente</h4>
+        </div>
+
+        <div class="modal-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <label>Nome</label>
+                            <input required id="nomeCliente" type="text" name="servico" formControlName="nome"
+                                class="form-control" style="width: 100%;" [(ngModel)]="nome">
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <label for="CPF">CPF</label>
+                            <input required id="cpf" type="text" name="cpf" formControlName="cpf" class="form-control"
+                                style="width: 100%;" [(ngModel)]="cpf">
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="container">
+                <button class="btn btn-info" type="submit">Agendar
+                </button>
+                <button type="button" class="btn btn-light ml-2" (click)="closeModalClienteForm()">Cancelar
+                </button>
+            </div>
+        </div>
+    </form>
+
+</ng-template>

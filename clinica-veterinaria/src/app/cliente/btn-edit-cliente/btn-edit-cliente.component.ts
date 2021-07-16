@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Cliente } from 'src/app/models/cliente.model';
@@ -10,9 +10,13 @@ import { Cliente } from 'src/app/models/cliente.model';
 })
 export class BtnEditClienteComponent implements OnInit {
 
+  @Input() cliente!: Cliente;
+
   clienteForm!: FormGroup;
   clienteFormBsModalRef!: BsModalRef;
   clientes: Cliente[] = [];
+  nome!: string;
+  cpf!: string;
 
   constructor(
     private bsModalService: BsModalService
@@ -30,6 +34,8 @@ export class BtnEditClienteComponent implements OnInit {
       class: 'modal-sl modal-dialog-centered',
       ignoreBackdropClick: true
     })
+    this.nome = this.cliente.nome;
+    this.cpf = this.cliente.cpf;
   }
 
   closeModalClienteForm(): void {
@@ -39,7 +45,6 @@ export class BtnEditClienteComponent implements OnInit {
   editCliente() {
     this.closeModalClienteForm();
     console.log(this.clienteForm);
-    this.clientes.push(this.clienteForm.value);
   }
 
 }

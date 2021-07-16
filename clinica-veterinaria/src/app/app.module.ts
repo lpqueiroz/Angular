@@ -14,6 +14,7 @@ import { ClienteComponent } from './cliente/cliente.component';
 import { BtnCreateClienteComponent } from './cliente/btn-create-cliente/btn-create-cliente.component';
 import { BtnDeleteClienteComponent } from './cliente/btn-delete-cliente/btn-delete-cliente.component';
 import { BtnEditClienteComponent } from './cliente/btn-edit-cliente/btn-edit-cliente.component';
+import { PacienteComponent } from './paciente/paciente.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { BtnEditClienteComponent } from './cliente/btn-edit-cliente/btn-edit-cli
     ClienteComponent,
     BtnCreateClienteComponent,
     BtnDeleteClienteComponent,
-    BtnEditClienteComponent
+    BtnEditClienteComponent,
+    PacienteComponent
   ],
   imports: [
     BrowserModule,

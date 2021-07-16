@@ -1,1 +1,35 @@
-<p>agendamento works!</p>
+<div class="container">
+    <div class="text-center mt-5">
+        <h2>Agendamentos</h2>
+    </div>
+
+    <table class="table mt-5">
+        <thead>
+            <tr>
+                <th scope="col">NOME DO PACIENTE</th>
+                <th scope="col">ESPÉCIE</th>
+                <th scope="col">NOME DO RESPONSÁVEL</th>
+                <th scope="col">DATA AGENDADA</th>
+                <th scope="col">CANCELAMENTOS</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let agendamento of agendamentos">
+            <tr>
+                <th scope="row">{{agendamento.nomePaciente}}</th>
+                <td>{{agendamento.especie}}</td>
+                <td>{{agendamento.nomeResponsavel}}</td>
+                <td>{{agendamento.data}}</td>
+                <td>
+                    <div *ngIf="!agendamento.isCancelled; else showCancelado">
+                        <button class="btn btn-info mr-2">
+                            Cancelar
+                        </button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <ng-template #showCancelado>
+        <p style="color: red">Cancelado</p>
+    </ng-template>
+</div>
