@@ -11,18 +11,18 @@
                 <div class="row">
                     <div class="col-md-6">
                         <fieldset class="form-group">
-                            <label>Nome</label>
-                            <input required id="nomeCliente" type="text" name="servico" formControlName="nome"
-                                class="form-control" style="width: 100%;" [(ngModel)]="nome">
+                            <label for="nome">Nome</label>
+                            <input id="nome" type="text" name="servico" formControlName="nome" class="form-control"
+                                style="width: 100%;" [(ngModel)]="cliente.nome">
                         </fieldset>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <fieldset class="form-group">
-                            <label for="CPF">CPF</label>
-                            <input required id="cpf" type="text" name="cpf" formControlName="cpf" class="form-control"
-                                style="width: 100%;" [(ngModel)]="cpf">
+                            <label for="cpf">CPF</label>
+                            <input id="cpf" type="text" name="cpf" formControlName="cpf" class="form-control"
+                                style="width: 100%;" [(ngModel)]="cliente.cpf">
                         </fieldset>
                     </div>
                 </div>

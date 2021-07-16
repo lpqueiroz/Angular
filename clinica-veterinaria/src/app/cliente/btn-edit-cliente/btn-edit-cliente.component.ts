@@ -15,8 +15,6 @@ export class BtnEditClienteComponent implements OnInit {
   clienteForm!: FormGroup;
   clienteFormBsModalRef!: BsModalRef;
   clientes: Cliente[] = [];
-  nome!: string;
-  cpf!: string;
 
   constructor(
     private bsModalService: BsModalService
@@ -34,8 +32,6 @@ export class BtnEditClienteComponent implements OnInit {
       class: 'modal-sl modal-dialog-centered',
       ignoreBackdropClick: true
     })
-    this.nome = this.cliente.nome;
-    this.cpf = this.cliente.cpf;
   }
 
   closeModalClienteForm(): void {
