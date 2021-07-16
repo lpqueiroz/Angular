@@ -1,0 +1,41 @@
+<button class="btn btn-info float-right" (click)="openClienteFormModal(clienteModalCreateTemplate)">
+    Cadastrar cliente
+</button>
+
+<ng-template #clienteModalCreateTemplate>
+    <form [formGroup]="clienteForm" (ngSubmit)="createCliente()">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left">Novo Cliente</h4>
+        </div>
+
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" formControlName="nome" class="form-control" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="cpf">CPF</label>
+                        <input type="text" formControlName="cpf" class="form-control" style="width: 100%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <div class="container">
+                <button class="btn btn-info" type="submit">
+                    Cadastrar
+                </button>
+                <button type="button" class="btn btn-light ml-2" (click)="closeModalClienteForm()">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+    </form>
+</ng-template>

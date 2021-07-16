@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="text-center mt-5">
+        <h2>Listagem de Clientes</h2>
+        <app-btn-create-cliente (clienteCreated)="onClienteCreated($event)"></app-btn-create-cliente>
+    </div>
+</div>
+
+<table class="table mt-5">
+    <thead>
+        <tr>
+            <th>NOME</th>
+            <th>CPF</th>
+            <th>ADMINISTRAR Clientes</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let cliente of clientes">
+        <tr>
+            <td>{{cliente.nome}}</td>
+            <td>{{cliente.cpf}}</td>
+            <td>
+                <app-btn-edit-cliente></app-btn-edit-cliente>
+                <app-btn-delete-cliente></app-btn-delete-cliente>
+            </td>
+        </tr>
+    </tbody>
+</table>

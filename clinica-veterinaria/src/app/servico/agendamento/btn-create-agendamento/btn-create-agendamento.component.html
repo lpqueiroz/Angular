@@ -5,7 +5,7 @@
 </div>
 
 <ng-template #agendamentoModalCreateTemplate>
-    <form [formGroup]="agendamentoForm">
+    <form [formGroup]="agendamentoForm" (ngSubmit)="createAgendamento()">
         <div class="modal-header">
             <h4 class="modal-title pull-left">Novo Agendamento</h4>
         </div>
@@ -21,10 +21,52 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="data">Data</label>
+                            <input type="text" formControlName="data" class="form-control" style="width: 100%;"
+                                bsDatepicker placeholder="Data para agendamento" [bsConfig]="dateConfig">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nomePaciente">Nome do Paciente</label>
+                            <input type="text" formControlName="nomePaciente" class="form-control" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nomeResponsavel">Nome do Responsavel</label>
+                            <input type="text" formControlName="nomeResponsavel" class="form-control"
+                                style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="especie">Espécie</label>
+                            <input type="text" formControlName="especie" class="form-control" style="width: 100%;">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div class="modal-footer">
+            <div class="container">
+                <button class="btn btn-info" type="submit">
+                    Agendar
+                </button>
+                <button type="button" class="btn btn-light ml-2" (click)="closeModalAgendamentoForm()">
+                    Cancelar
+                </button>
+            </div>
         </div>
     </form>
 </ng-template>

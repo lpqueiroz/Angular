@@ -8,15 +8,23 @@ import { AgendamentoComponent } from './servico/agendamento/agendamento.componen
 import { BtnCreateAgendamentoComponent } from './servico/agendamento/btn-create-agendamento/btn-create-agendamento.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ReactiveFormsModule } from '@angular/forms';
-import { BsDatepickerModule, DatepickerModule } from 'ngx-bootstrap/datepicker';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ClienteComponent } from './cliente/cliente.component';
+import { BtnCreateClienteComponent } from './cliente/btn-create-cliente/btn-create-cliente.component';
+import { BtnDeleteClienteComponent } from './cliente/btn-delete-cliente/btn-delete-cliente.component';
+import { BtnEditClienteComponent } from './cliente/btn-edit-cliente/btn-edit-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServicoComponent,
     AgendamentoComponent,
-    BtnCreateAgendamentoComponent
+    BtnCreateAgendamentoComponent,
+    ClienteComponent,
+    BtnCreateClienteComponent,
+    BtnDeleteClienteComponent,
+    BtnEditClienteComponent
   ],
   imports: [
     BrowserModule,

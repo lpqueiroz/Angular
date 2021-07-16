@@ -27,7 +27,8 @@ export class BtnCreateAgendamentoComponent implements OnInit {
       nomePaciente: new FormControl(),
       nomeResponsavel: new FormControl(),
       especie: new FormControl()
-    })
+    });
+    this.dateConfig.containerClass = 'theme-dark-blue';
   }
 
   openModalAgendamentoForm(template: TemplateRef<any>) {
@@ -41,9 +42,10 @@ export class BtnCreateAgendamentoComponent implements OnInit {
     this.agendamentoFormBsModalRef.hide();
   }
 
-  // create() {
-  //   console.log(this.agendamentoForm);
-  // }
+  createAgendamento() {
+    this.agendamentoFormBsModalRef.hide();
+    console.log(this.agendamentoForm);
+  }
 
 
 }
