@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Cliente } from 'src/app/models/cliente.model';
 
@@ -22,8 +22,8 @@ export class BtnCreateClienteComponent implements OnInit {
 
   ngOnInit(): void {
     this.clienteForm = new FormGroup({
-      nome: new FormControl(),
-      cpf: new FormControl()
+      nome: new FormControl(null, [Validators.required, Validators.minLength(3), Validators.maxLength(40)]),
+      cpf: new FormControl(null, [Validators.required, Validators.minLength(11), Validators.maxLength(11), Validators.pattern('^[0-9]*$')])
     });
   }
 
@@ -41,8 +41,8 @@ export class BtnCreateClienteComponent implements OnInit {
 
   createCliente() {
     this.closeModalClienteForm();
-    console.log(this.clienteForm);
     this.clientes.push(this.clienteForm.value);
+    console.log(this.clienteForm.value);
     this.clienteCreated.emit(this.clienteForm.value);
   }
 

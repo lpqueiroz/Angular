@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BtnCreateClienteComponent } from './btn-create-cliente.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
-describe('BtnCreateClienteComponent', () => {
-  let component: BtnCreateClienteComponent;
-  let fixture: ComponentFixture<BtnCreateClienteComponent>;
+describe('PageNotFoundComponent', () => {
+  let component: PageNotFoundComponent;
+  let fixture: ComponentFixture<PageNotFoundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BtnCreateClienteComponent ]
+      declarations: [ PageNotFoundComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BtnCreateClienteComponent);
+    fixture = TestBed.createComponent(PageNotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

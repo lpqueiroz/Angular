@@ -31,7 +31,7 @@
 
         <div class="modal-footer">
             <div class="container">
-                <button class="btn btn-info" type="submit">
+                <button class="btn btn-info" type="submit" [disabled]="clienteForm.invalid">
                     Cadastrar
                 </button>
                 <button type="button" class="btn btn-light ml-2" (click)="closeModalClienteForm()">

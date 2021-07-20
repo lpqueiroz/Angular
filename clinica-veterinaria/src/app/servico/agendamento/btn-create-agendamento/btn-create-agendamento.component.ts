@@ -43,8 +43,8 @@ export class BtnCreateAgendamentoComponent implements OnInit {
   }
 
   createAgendamento() {
-    this.agendamentoFormBsModalRef.hide();
-    console.log(this.agendamentoForm);
+    this.closeModalAgendamentoForm();
+    console.log(this.agendamentoForm.value);
   }
 
 

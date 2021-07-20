@@ -7,7 +7,7 @@ import { ServicoComponent } from './servico/servico.component';
 import { AgendamentoComponent } from './servico/agendamento/agendamento.component';
 import { BtnCreateAgendamentoComponent } from './servico/agendamento/btn-create-agendamento/btn-create-agendamento.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ClienteComponent } from './cliente/cliente.component';
@@ -15,6 +15,10 @@ import { BtnCreateClienteComponent } from './cliente/btn-create-cliente/btn-crea
 import { BtnDeleteClienteComponent } from './cliente/btn-delete-cliente/btn-delete-cliente.component';
 import { BtnEditClienteComponent } from './cliente/btn-edit-cliente/btn-edit-cliente.component';
 import { PacienteComponent } from './paciente/paciente.component';
+import { ParentComponent } from './life-cycle-hooks/parent/parent.component';
+import { ChildComponent } from './life-cycle-hooks/child/child.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { LoggingServiceService } from './services/logging-service.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +30,10 @@ import { PacienteComponent } from './paciente/paciente.component';
     BtnCreateClienteComponent,
     BtnDeleteClienteComponent,
     BtnEditClienteComponent,
-    PacienteComponent
+    PacienteComponent,
+    ParentComponent,
+    ChildComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -34,9 +41,13 @@ import { PacienteComponent } from './paciente/paciente.component';
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [LoggingServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
