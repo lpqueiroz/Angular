@@ -19,6 +19,8 @@ import { ParentComponent } from './life-cycle-hooks/parent/parent.component';
 import { ChildComponent } from './life-cycle-hooks/child/child.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { LoggingServiceService } from './services/logging-service.service';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { LoggingServiceService } from './services/logging-service.service';
     BsDatepickerModule.forRoot(),
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [LoggingServiceService],
   bootstrap: [AppComponent]

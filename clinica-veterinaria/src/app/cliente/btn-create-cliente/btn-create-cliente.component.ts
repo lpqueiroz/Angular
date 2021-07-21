@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output, TemplateRef } from '@angular/c
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Cliente } from 'src/app/models/cliente.model';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-btn-create-cliente',
@@ -17,7 +18,8 @@ export class BtnCreateClienteComponent implements OnInit {
   @Output() clienteCreated = new EventEmitter<any>();
 
   constructor(
-    private bsModalService: BsModalService
+    private bsModalService: BsModalService,
+    private clienteService: ClienteService
   ) { }
 
   ngOnInit(): void {
@@ -44,6 +46,11 @@ export class BtnCreateClienteComponent implements OnInit {
     this.clientes.push(this.clienteForm.value);
     console.log(this.clienteForm.value);
     this.clienteCreated.emit(this.clienteForm.value);
+    this.clienteService.postCliente(this.clienteForm.value).subscribe(data => {
+      console.log(data);
+    }, error => {
+      console.log(error)
+    });
   }
 
 }

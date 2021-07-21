@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../models/cliente.model';
+import { ClienteService } from '../services/cliente.service';
 import { LoggingServiceService } from '../services/logging-service.service';
 
 @Component({
@@ -23,13 +24,18 @@ export class ClienteComponent implements OnInit {
   // ]
 
   clientes: Cliente[] = [];
-  clienteService = new LoggingServiceService // NÃO USA ASSIM!!!! NÃO INSTANCIA NA MÃO!
+  // clienteService = new LoggingServiceService // NÃO USA ASSIM!!!! NÃO INSTANCIA NA MÃO!
 
   constructor(
-    private loggingService: LoggingServiceService // USA INJEÇÃO DE DEPENDÊNCIA!!
+    private loggingService: LoggingServiceService,
+    private clienteService: ClienteService // USA INJEÇÃO DE DEPENDÊNCIA!!
   ) { }
 
   ngOnInit(): void {
+    this.clienteService.getCliente().subscribe(clientes => {
+      this.clientes = clientes
+      console.log(this.clientes);
+    }, error => { alert("OCORREU UM ERRO!") });
   }
 
   onClienteCreated(event: any) {

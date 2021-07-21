@@ -2,6 +2,7 @@ import { Component, Input, OnInit, TemplateRef } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { Cliente } from 'src/app/models/cliente.model';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
   selector: 'app-btn-delete-cliente',
@@ -16,7 +17,8 @@ export class BtnDeleteClienteComponent implements OnInit {
   clienteFormBsModalRef!: BsModalRef;
 
   constructor(
-    private bsModalService: BsModalService
+    private bsModalService: BsModalService,
+    private clienteService: ClienteService
   ) { }
 
   ngOnInit(): void {
@@ -38,7 +40,11 @@ export class BtnDeleteClienteComponent implements OnInit {
   }
 
   deleteCliente() {
-
+    this.clienteService.deleteCliente(this.cliente.id).subscribe(cliente => {
+      alert('Cliente deletado com sucesso!');
+    }, error => {
+      alert('Não foi possível deletar o cliente');
+    })
   }
 
 }
